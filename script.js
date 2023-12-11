@@ -1,15 +1,16 @@
 //your JS code here. If required.
-const year=parseInt(prompt("Enter any year"));
-
-if(year%100==0){
-	if(year%400==0){
-		alert(366);
-	}
-	else{
-		alert(365);
-	}
+function daysOfAYear(year){
+    
+    if(year % 4 ===0 ){
+        //may be a leap year
+        if(year % 100 === 0){
+            //century year
+            return year % 400 === 0 ? 366 : 365;
+        }
+        return 366
+    }
+    return 365
 }
-if(year%4==0){
-	alert(366);
-}
-alert(365);
+let year = prompt("enter the year")
+let days = daysOfAYear(year);
+alert(days)
